@@ -55,7 +55,7 @@ Default region name [None]: us-east-1
 Default output format [None]: json
 ```
 
-### Install eksctl(a simple command line utility for creating and managing Kubernetes clusters on Amazon EKS)
+### Installing eksctl(a simple command line utility for creating and managing Kubernetes clusters on Amazon EKS)
 
 1. Download and extract the latest release of eksctl with the following command.
 
@@ -75,7 +75,7 @@ sudo mv /tmp/eksctl /usr/local/bin
 eksctl version
 ```
 
-### Install and Set Up kubectl
+### Installing and Set Up kubectl
 
 1. Download the latest release with the command:
 
@@ -129,7 +129,7 @@ echo 'alias k=kubectl' >>~/.bashrc
 echo 'complete -F __start_kubectl k' >>~/.bashrc
 ```
 
-### To create your cluster with eksctl
+### Creating your cluster with eksctl
 
 ```
 eksctl create cluster \
