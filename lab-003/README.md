@@ -22,8 +22,8 @@ kubernetes.io/role/internal-elb 1
 1. Create an IAM OIDC provider and associate it with your cluster
 ```
 eksctl utils associate-iam-oidc-provider \
-    --region region-code \
-    --cluster prod \
+    --region <region-code> \
+    --cluster <cluster_name> \
     --approve
 ```
 
