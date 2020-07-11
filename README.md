@@ -1,1 +1,12 @@
 # aws-eks-labs
+A collection of hands-on labs to help learning the fundamentals of Elastic Kubernetes Service Up and Running on AWS Enviroment. Each lab has:
+
+## Index
+
+[Lab-001 - Deploy EKS on AWS](lab-001)
+
+The goal of this lab is to launch a EKS Cluster on AWS.
+
+[Lab-002 - Setup EKS Monitoring with Metrics + Prometheus](lab-002)
+
+The goal of this lab is to demonstrate how to setup a EKS Monitoring.

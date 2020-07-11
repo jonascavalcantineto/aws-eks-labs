@@ -1,12 +1,12 @@
-# How to deploy Kubernetes in AWS Amazon
+# Deploy EKS on AWS
 
-## The following applications are required to access the AWS infrastrucuture: awscli and aws-iam-authenticator
+### The following applications are required to access the AWS infrastrucuture: awscli and aws-iam-authenticator
 
 * Download the *accessKey.csv* file of the AWS administrator on AWS Console portal.
 
 ### Install the awscli client
 
-#### Requirements:
+### Requirements:
     - Python > version 2.7 
     - Pip3
 
@@ -51,7 +51,7 @@ aws-iam-authenticator help
 $ aws configure
 AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
 AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-Default region name [None]: us-west-2
+Default region name [None]: us-east-1
 Default output format [None]: json
 ```
 

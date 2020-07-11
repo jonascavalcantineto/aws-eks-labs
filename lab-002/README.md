@@ -1,6 +1,6 @@
-# How To Implment Monitoring EKS on AWS
+# Setup EKS Monitoring with Metrics + Prometheus
 
-## Installing the Kubernetes Metrics Server
+### Installing the Kubernetes Metrics Server
 
 If you have a macOS or Linux system with curl, tar, gzip, and the jq JSON parser installed, you can download, extract, and install the latest release with the following commands. Otherwise, use the next procedure to download the latest version using a web browser.
 
