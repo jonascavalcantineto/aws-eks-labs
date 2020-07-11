@@ -45,7 +45,7 @@ echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
 aws-iam-authenticator help
 ```
 
-### Configure Your AWS CLI Credentials (Get you accessKey.csv file) - When you type this command, the AWS CLI prompts you for four pieces of information: access key, secret access key, AWS Region, and output format. This information is stored in a profile (a collection of settings) named default. This profile is used unless you specify another one.
+### Configuring your AWS CLI Credentials (Get you accessKey.csv file) - When you type this command, the AWS CLI prompts you for four pieces of information: access key, secret access key, AWS Region, and output format. This information is stored in a profile (a collection of settings) named default. This profile is used unless you specify another one.
 
 ```
 $ aws configure
