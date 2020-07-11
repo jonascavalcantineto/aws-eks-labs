@@ -133,11 +133,11 @@ echo 'complete -F __start_kubectl k' >>~/.bashrc
 
 ```
 eksctl create cluster \
---name <Cluster Name> \
+--name <cluster_name> \
 --version 1.17 \
---region us-east-1 \
+--region <region-code> \
 --nodegroup-name standard-workers \
---node-type <instance type> \
+--node-type <instance_type> \
 --nodes 3 \
 --nodes-min 1 \
 --nodes-max 4 \
@@ -145,6 +145,12 @@ eksctl create cluster \
 --ssh-public-key <path>/.ssh/id_rsa.pub \
 --managed
 ```
+
+### Acessing the cluster 
+```
+aws eks --region <region-code> update-kubeconfig --name <cluster_name>
+```
+
 
 ## References
 
