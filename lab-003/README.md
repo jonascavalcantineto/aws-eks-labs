@@ -1,21 +1,23 @@
 # ALB Ingress Controller to an Amazon EKS cluster
 
-### Tag the subnets in your VPC that you want to use for your load balancers so that the ALB Ingress Controller knows that it can use them. For more information, see Subnet tagging requirement. If you deployed your cluster with eksctl, then the tags are already applied.
+## Tag the subnets in your VPC that you want to use for your load balancers so that the ALB Ingress Controller knows that it can use them. For more information, see Subnet tagging requirement. If you deployed your cluster with eksctl, then the tags are already applied.
 
 * All subnets in your VPC should be tagged accordingly so that Kubernetes can discover them.
 ```
-Key	                                    Value
+Key                                     Value
 kubernetes.io/cluster/<cluster-name>    shared
 ```
 * Public subnets in your VPC should be tagged accordingly so that Kubernetes knows to use only those subnets for external load balancers.
-
+```
 Key	                    Value
 kubernetes.io/role/elb  1
+```
 
 * Private subnets must be tagged in the following way so that Kubernetes knows it can use the subnets for internal load balancers. If you use an Amazon EKS AWS CloudFormation template to create your VPC after 03/26/2020, then the subnets created by the template are tagged when they're created. For more information about the Amazon EKS AWS CloudFormation VPC templates, see Creating a VPC for your Amazon EKS cluster.
-
+```
 Key	                            Value
 kubernetes.io/role/internal-elb 1
+```
 
 1. Create an IAM OIDC provider and associate it with your cluster
 ```
