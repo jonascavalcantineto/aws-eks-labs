@@ -1,10 +1,10 @@
 # Kubernetes Dashboard Web UI Deploy on Amazon EKS cluster
 
-### Dashboard is a web-based Kubernetes user interface. You can use Dashboard to deploy containerized applications to a Kubernetes cluster, troubleshoot your containerized application, and manage the cluster resources. You can use Dashboard to get an overview of applications running on your cluster, as well as for creating or modifying individual Kubernetes resources (such as Deployments, Jobs, DaemonSets, etc). For example, you can scale a Deployment, initiate a rolling update, restart a pod or deploy new applications using a deploy wizard.
+Dashboard is a web-based Kubernetes user interface. You can use Dashboard to deploy containerized applications to a Kubernetes cluster, troubleshoot your containerized application, and manage the cluster resources. You can use Dashboard to get an overview of applications running on your cluster, as well as for creating or modifying individual Kubernetes resources (such as Deployments, Jobs, DaemonSets, etc). For example, you can scale a Deployment, initiate a rolling update, restart a pod or deploy new applications using a deploy wizard.
 
-### Dashboard also provides information on the state of Kubernetes resources in your cluster and on any errors that may have occurred.
+Dashboard also provides information on the state of Kubernetes resources in your cluster and on any errors that may have occurred.
 
-image::images/ui-dashboard.png
+![Web UI](/mages/ui-dashboard.png)
 
 ## Deploying the Dashboard UI
 ### The Dashboard UI is not deployed by default. To deploy it, run the following command:
@@ -131,4 +131,4 @@ token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2V
 
 ### Access the WEB UI Dashboard http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 
-image::images/ui-kube-signin.png
+![Web UI SignIn](/images/ui-kube-signin.png)
