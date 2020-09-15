@@ -13,7 +13,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/a
 ```
 
 ## Accessing the Dashboard UI 
-### To protect your cluster data, Dashboard deploys with a minimal RBAC configuration by default. Currently, Dashboard only supports logging in with a Bearer Token. To create a token for this demo, you can follow our guide on creating a sample user.
+To protect your cluster data, Dashboard deploys with a minimal RBAC configuration by default. Currently, Dashboard only supports logging in with a Bearer Token. To create a token for this demo, you can follow our guide on creating a sample user.
 ```
 kubectl proxy
 ```
@@ -21,13 +21,13 @@ kubectl proxy
 Kubectl will make Dashboard available at http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 
 ## Creating sample user
-### In this guide, we will find out how to create a new user using Service Account mechanism of Kubernetes, grant this user admin permissions and login to Dashboard using bearer token tied to this user.
+In this guide, we will find out how to create a new user using Service Account mechanism of Kubernetes, grant this user admin permissions and login to Dashboard using bearer token tied to this user.
 
-[IMPORTANT]: Make sure that you know what you are doing before proceeding. Granting admin privileges to Dashboard's Service Account might be a security risk.
+[IMPORTANT] Make sure that you know what you are doing before proceeding. Granting admin privileges to Dashboard's Service Account might be a security risk.
 
-#### For each of the following snippets for ServiceAccount and ClusterRoleBinding, you should copy them to new manifest files like dashboard-adminuser.yaml and use kubectl apply -f dashboard-adminuser.yaml to create them.
+For each of the following snippets for ServiceAccount and ClusterRoleBinding, you should copy them to new manifest files like dashboard-adminuser.yaml and use kubectl apply -f dashboard-adminuser.yaml to create them.
 
-### We are creating Admin Service Account with name admin-user in namespace kubernetes-dashboard first.
+We are creating Admin Service Account with name admin-user in namespace kubernetes-dashboard first.
 ```
 cat <<EOF | kubectl apply -f -
 apiVersion: v1
@@ -38,7 +38,7 @@ metadata:
 EOF
 ```
 
-### We can use it and create only ClusterRoleBinding for our ServiceAccount
+We can use it and create only ClusterRoleBinding for our ServiceAccount
 ```
 cat <<EOF | kubectl apply -f -
 apiVersion: rbac.authorization.k8s.io/v1
@@ -55,13 +55,13 @@ subjects:
   namespace: kubernetes-dashboard
 EOF
 ```
-### Getting and copy token admin
+Getting and copy token admin
 ```
 # kubectl -n kubernetes-dashboard get secret
 # kubectl -n kubernetes-dashboard describe secret <admin-user-secret>
 ```
 
-### It should print something like:
+It should print something like:
 ```
 Name:         admin-user-token-v57nw
 Namespace:    kubernetes-dashboard
@@ -78,7 +78,7 @@ namespace:  20 bytes
 token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi11c2VyLXRva2VuLXY1N253Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImFkbWluLXVzZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiIwMzAzMjQzYy00MDQwLTRhNTgtOGE0Ny04NDllZTliYTc5YzEiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZXJuZXRlcy1kYXNoYm9hcmQ6YWRtaW4tdXNlciJ9.Z2JrQlitASVwWbc-s6deLRFVk5DWD3P_vjUFXsqVSY10pbjFLG4njoZwh8p3tLxnX_VBsr7_6bwxhWSYChp9hwxznemD5x5HLtjb16kI9Z7yFWLtohzkTwuFbqmQaMoget_nYcQBUC5fDmBHRfFvNKePh_vSSb2h_aYXa8GV5AcfPQpY7r461itme1EXHQJqv-SN-zUnguDguCTjD80pFZ_CmnSE1z9QdMHPB8hoB4V68gtswR1VLa6mSYdgPwCHauuOobojALSaMc3RH7MmFUumAgguhqAkX3Omqd3rJbYOMRuMjhANqd08piDC3aIabINX6gP5-Tuuw2svnV6NYQ
 ```
 
-### We are creating View Service Account with name admin-user in namespace kubernetes-dashboard first.
+We are creating View Service Account with name admin-user in namespace kubernetes-dashboard first.
 ```
 cat <<EOF | kubectl apply -f -
 apiVersion: v1
@@ -89,7 +89,7 @@ metadata:
 EOF
 ```
 
-### We can use it and create only ClusterRoleBinding for our ServiceAccount
+We can use it and create only ClusterRoleBinding for our ServiceAccount
 ```
 cat <<EOF | kubectl apply -f -
 apiVersion: rbac.authorization.k8s.io/v1
@@ -106,13 +106,14 @@ subjects:
   namespace: kubernetes-dashboard
 EOF
 ```
-### Getting and copy token admin
+
+Getting and copy token admin
 ```
 # kubectl -n kubernetes-dashboard get secret
 # kubectl -n kubernetes-dashboard describe secret <view-user-secret>
 ```
 
-### It should print something like:
+It should print something like:
 ```
 Name:         view-user-token-v57nw
 Namespace:    kubernetes-dashboard
@@ -129,6 +130,6 @@ namespace:  20 bytes
 token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi11c2VyLXRva2VuLXY1N253Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImFkbWluLXVzZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiIwMzAzMjQzYy00MDQwLTRhNTgtOGE0Ny04NDllZTliYTc5YzEiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZXJuZXRlcy1kYXNoYm9hcmQ6YWRtaW4tdXNlciJ9.Z2JrQlitASVwWbc-s6deLRFVk5DWD3P_vjUFXsqVSY10pbjFLG4njoZwh8p3tLxnX_VBsr7_6bwxhWSYChp9hwxznemD5x5HLtjb16kI9Z7yFWLtohzkTwuFbqmQaMoget_nYcQBUC5fDmBHRfFvNKePh_vSSb2h_aYXa8GV5AcfPQpY7r461itme1EXHQJqv-SN-zUnguDguCTjD80pFZ_CmnSE1z9QdMHPB8hoB4V68gtswR1VLa6mSYdgPwCHauuOobojALSaMc3RH7MmFUumAgguhqAkX3Omqd3rJbYOMRuMjhANqd08piDC3aIabINX6gP5-Tuuw2svnV6NYQ
 ```
 
-### Access the WEB UI Dashboard http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+Access the WEB UI Dashboard http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 
 ![Web UI SignIn](../images/ui-kube-signin.png)
