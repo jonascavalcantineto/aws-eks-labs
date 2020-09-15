@@ -14,3 +14,7 @@ The goal of this lab is to demonstrate how to setup a EKS Monitoring.
 [Lab-003 - Setup ALB Ingress Controller to an Amazon EKS cluster](lab-003)
 
 The goal of this lab is to demonstrate how to setup a ALB Ingress Controller to an Amazon EKS cluster.
+
+[Lab-004 - Setup Kubernetes Dashboard on EKS](lab-004)
+
+The goal of this lab is to demonstrate how to setup a Kubernetes Dashboard and access its interface with user admin and view.

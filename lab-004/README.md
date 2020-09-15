@@ -4,7 +4,7 @@
 
 ### Dashboard also provides information on the state of Kubernetes resources in your cluster and on any errors that may have occurred.
 
-![Web UI](imgs/ui-dashboard.png)
+image::images/ui-dashboard.png
 
 ## Deploying the Dashboard UI
 ### The Dashboard UI is not deployed by default. To deploy it, run the following command:
@@ -131,4 +131,4 @@ token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2V
 
 ### Access the WEB UI Dashboard http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 
-![Web UI SignIn](imgs/ui-kube-signin.png)
+image::images/ui-kube-signin.png
