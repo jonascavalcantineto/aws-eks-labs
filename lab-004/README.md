@@ -4,7 +4,7 @@ Dashboard is a web-based Kubernetes user interface. You can use Dashboard to dep
 
 Dashboard also provides information on the state of Kubernetes resources in your cluster and on any errors that may have occurred.
 
-![Web UI](/mages/ui-dashboard.png)
+![Web UI](../mages/ui-dashboard.png)
 
 ## Deploying the Dashboard UI
 ### The Dashboard UI is not deployed by default. To deploy it, run the following command:
@@ -131,4 +131,4 @@ token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2V
 
 ### Access the WEB UI Dashboard http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 
-![Web UI SignIn](/images/ui-kube-signin.png)
+![Web UI SignIn](../images/ui-kube-signin.png)
